@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Questions</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Questions</h1>
+<form action="#" th:action="@{/add_question}" th:object="${question}" method="post">
+    <label for="questionText">Question:</label>
+    <textarea id="questionText" th:field="*{questionText}" required></textarea>
+
+    <label for="optionA">Option A:</label>
+    <input type="text" id="optionA" th:field="*{optionA}" required />
+
+    <label for="optionB">Option B:</label>
+    <input type="text" id="optionB" th:field="*{optionB}" required />
+
+    <label for="optionC">Option C:</label>
+    <input type="text" id="optionC" th:field="*{optionC}" required />
+
+    <label for="optionD">Option D:</label>
+    <input type="text" id="optionD" th:field="*{optionD}" required />
+
+    <label for="correctAnswer">Correct Answer:</label>
+    <input type="text" id="correctAnswer" th:field="*{correctAnswer}" required />
+
+    <button type="submit">Save</button>
+</form>
+<a href="/exams">Back to Exams</a>
+</body>
+</html>

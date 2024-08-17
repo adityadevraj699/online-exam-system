@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Results</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Exam ID</th>
+        <th>User ID</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result : ${results}">
+        <td th:text="${result.examId}"></td>
+        <td th:text="${result.userId}"></td>
+        <td th:text="${result.score}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Exams</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Exams</h1>
+<a href="/create_exam">Create New Exam</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="exam : ${exams}">
+        <td th:text="${exam.id}"></td>
+        <td th:text="${exam.name}"></td>
+        <td th:text="${exam.duration}"></td>
+        <td><a th:href="@{/delete_exam/{id}(id=${exam.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
